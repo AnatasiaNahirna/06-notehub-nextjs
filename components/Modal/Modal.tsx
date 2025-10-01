@@ -17,6 +17,7 @@ export default function Modal({onClose, isOpen, children}: ModalProps) {
   };
 
   useEffect(() => {
+    if (!isOpen) { return };
 	  const handleKeyDown = (e: KeyboardEvent) => {
 	    if (e.key === "Escape") {
 	      onClose();
@@ -32,8 +33,8 @@ export default function Modal({onClose, isOpen, children}: ModalProps) {
 
 	  };
   }, [onClose]);
-    
-    if (!isOpen) return null;
+
+    if (!isOpen) {return null};
 
 
     return createPortal(
