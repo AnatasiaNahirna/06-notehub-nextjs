@@ -32,7 +32,7 @@ export default function Modal({onClose, isOpen, children}: ModalProps) {
         document.body.style.overflow = "";
 
 	  };
-  }, [onClose]);
+  }, [isOpen, onClose]);
 
     if (!isOpen) {return null};
 
